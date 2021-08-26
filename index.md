@@ -1,8 +1,10 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: default
+layout: splash
+header:
+  overlay_color: "#000"
+  overlay_filter: "0.5"
+  overlay_image: /assets/images/header_unsplash.jpg
+excerpt: "Finance - Sports Analytics - Japanese - Travel"
 ---
 
-This is my test page #yolo
+Content goes here
