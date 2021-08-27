@@ -137,6 +137,6 @@ clf.fit(x_train, y_train)
 clf.score(x_test, y_test)
 ```
 
-## The Result
+# The Result
 
 Depending on the randomization of the test data, this produced an R^2 score of 0.28-0.42, which is very poor. As expected, looking at just a couple years (or more) of basic stats isn't a great predictor of a QBs future performance. No wonder expert rankings can be so wildly inaccurate! Intuitively I believe that in-season factors are a much larger predictor of performance. In the next post, I'll explore using factors such as strength of schedule to see if they can improve the model.
