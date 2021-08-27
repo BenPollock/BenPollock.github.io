@@ -7,7 +7,7 @@ header:
 excerpt: "Finance - Sports Analytics - Japanese - Travel"
 ---
 
-Personal webpage of Ben O Pollock
+Personal webpage of Ben Pollock
 
 Toronto ON
 
