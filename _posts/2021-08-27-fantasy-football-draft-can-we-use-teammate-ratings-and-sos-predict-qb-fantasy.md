@@ -1,6 +1,6 @@
 ---
 layout: posts
-title:  "Can we use hisorical stats to predict a QB's fantasy ranking - Using strength of schedule and OL strength"
+title:  "Can we use historical stats to predict a QB's fantasy ranking - Using strength of schedule and OL strength"
 date:   2021-08-27 17:00:00 -0400
 categories: sports
 tags: fantasy-football draft 2021

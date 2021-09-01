@@ -7,7 +7,7 @@ header:
 excerpt: "Finance - Sports Analytics - Japanese - Travel"
 ---
 
-Personal webpage of Ben Pollock - Toronto ON
+The personal webpage & blog of Ben Pollock - Toronto ON Canada
 
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
