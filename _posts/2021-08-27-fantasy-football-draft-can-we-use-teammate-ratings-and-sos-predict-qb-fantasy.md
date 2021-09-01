@@ -144,9 +144,65 @@ print("""Best parameters:
                             clf_gp.x[2], clf_gp.x[3],
                             clf_gp.x[4]))
 
-clf.fit(x_train, y_train)
-clf.score(x_test, y_test)
+clf2 = ensemble.GradientBoostingRegressor(n_estimators=50, random_state=0, max_depth = 1, learning_rate=1.0, max_features=32, min_samples_split=2, min_samples_leaf=1)
+clf2.fit(x_train, y_train)
+clf2.score(x_test, y_test)
 ```
+
+This produced a value of 0.2-0.7, which is higher than the previous model but still wildly variable and too inaccurate.
+
+Next, let's look at the relative importance of each feature using permutation importance and see if we can potentially improve the model by dropping redundant features.
+
+```python
+perm = PermutationImportance(clf).fit(x_test, y_test)
+eli5.show_weights(perm, feature_names = x_test.columns.tolist())
+```
+
+```
+0.8091 ± 0.6043 	2020_Overall
+0.3480 ± 0.3964 	Int_2019
+0.2457 ± 0.3458 	Pass_TD_2018
+0.0936 ± 0.4800 	Int_2018
+0.0522 ± 0.4518 	Rush_Yds_2018
+0.0394 ± 0.0429 	Cmp_2019
+0.0360 ± 0.0461 	FL_2019
+0.0251 ± 0.0286 	2020_Age
+0.0205 ± 0.0097 	Age_2018
+0.0037 ± 0.0096 	Pass_TD_2019
+0.0014 ± 0.0040 	2019_Injury
+0.0010 ± 0.0047 	Ol_2020
+0.0001 ± 0.0011 	Pass_Yds_2018
+0.0001 ± 0.0070 	Cmp_2018
+0 ± 0.0000 	2019_Overall
+0 ± 0.0000 	2019_Age
+0 ± 0.0000 	2018_Injury
+0 ± 0.0000 	Pts_2018
+0 ± 0.0000 	Rush_Att_2019
+0 ± 0.0000 	Sos_2019 
+```
+
+Not too suprising, but the madden 2020 overall rating for each player is by far the most important feature in predicting fantasy performance. Interestingly enough, the interceptions from the 2019 season was the second most important feature, with several 2018 stats following after. Offensive line strength was not a strong predictor, which implies that either my OL strength calculations are not great, or it's not a major factor.
+
+To see if just focusing on key features will improve the model, I created a new GBR with just the key features.
+
+```python
+merged_key_features_only = merged_with_madden_and_ol[["Player", "Pts_2020", "2020_Overall", "Int_2019", "Pass_TD_2018", "Int_2018", "Rush_Yds_2018", "Cmp_2019", "FL_2019", "2020_Age"]]
+
+train_data = merged_key_features_only.drop(["Player", "Pts_2020"],axis=1)
+target_label = merged_key_features_only["Pts_2020"]
+
+n_features = train_data.shape[1]
+x_train, x_test, y_train, y_test = train_test_split(train_data, target_label, test_size = 0.30)
+
+clf2 = ensemble.GradientBoostingRegressor(n_estimators=50, random_state=0, max_depth = 15, learning_rate=.1, max_features=2, min_samples_split=50, min_samples_leaf=50)
+
+clf2.fit(x_train, y_train)
+clf2.score(x_test, y_test)
+
+```
+
+This produced values slightly worse that the previous model with more features.
+
 
 # The Result
 

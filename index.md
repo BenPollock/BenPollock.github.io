@@ -3,13 +3,11 @@ layout: splash
 header:
   overlay_color: "#000"
   overlay_filter: "0.5"
-  overlay_image: /assets/images/header_unsplash.jpg
+  overlay_image: /assets/images/header_unsplash_low-res.jpg
 excerpt: "Finance - Sports Analytics - Japanese - Travel"
 ---
 
-Personal webpage of Ben Pollock
-
-Toronto ON
+Personal webpage of Ben Pollock - Toronto ON
 
 <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
