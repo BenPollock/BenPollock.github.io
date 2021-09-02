@@ -45,7 +45,8 @@ merged = reduce(lambda left,right: pd.merge(left,right, on=['Player'], how="oute
 merged = merged.drop(columns=["2020_Pass_Att", "2020_Cmp", "2020_Pass_Yds", "2020_Pass_TD", "2020_Int", "2020_Rush_Att", "2020_Rush_Yds", "2020_Rush_TD", "2020_FL"])
 
 ```
-<img src="/assets/images/2021-08-24/2016-2020-merged.png">
+
+![2016-2020 Merged Dataframe](/assets/images/2021/2016-2020-merged.png)
 
 That will now give me a dataframe of each player's stats from 2016-2019, as well as the 2020 points as my target.
 
@@ -66,7 +67,7 @@ ax.set_xticklabels(
     horizontalalignment='right'
 )
 ```
-<img src="/assets/images/2021-08-24/correlation.png">
+![Feature Correlation](/assets/images/2021/correlation.png)
 
 It is evident that the 2016 and 2017 data barely correlates to the 2020 points value. This implies that so much can happen in just a couple seasons that it is generally not worth looking at this data.
 

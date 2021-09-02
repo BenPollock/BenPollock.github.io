@@ -73,7 +73,7 @@ ol_2020_overall = ol_2020_rankings.groupby(['Team_2020']).mean()
 ol_2020_overall
 ```
 
-<img src="/assets/images/2021-08-27/2020-ol.png">
+![2020 Offensive Line Data](/assets/images/2021/2020-ol.png)
 
 I used this data and pulled it into another CSV to simplify the code. I merged in the rankings with the main player dataframe to create the final merged dataframe:
 
@@ -83,7 +83,7 @@ merged_with_madden = merged_with_madden.rename(columns={"Team_2020" : "Team"})
 merged_with_madden_and_ol = pd.merge(merged_with_madden, ol_2020_overall, on=['Team'], how="left").drop(columns=["Team"])
 merged_with_madden_and_ol
 ```
-<img src="/assets/images/2021-08-27/2016-2020-merged-sos.png">
+![Merged Dataframe with strength of schedule](/assets/images/2021/2016-2020-merged-sos.png)
 
 Then, I explored the data using a correlation matrix.
 
@@ -103,7 +103,7 @@ ax.set_xticklabels(
 )
 ```
 
-<img src="/assets/images/2021-08-27/correlation-sos.png">
+![Feature correlation with strength of schedule](/assets/images/2021/correlation-sos.png)
 
 Strength of schedule does weakly negatively correlate with points as expected. A positive injury rating (less likely to be injured) correlates positively with points as well. Madden overall rankings are good predictors of fantasy points as well.
 

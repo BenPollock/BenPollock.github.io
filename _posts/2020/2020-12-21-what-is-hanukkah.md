@@ -11,4 +11,4 @@ excerpt: "来週、ユダヤの祝日のハヌカーです。"
 
 去年、東京でハヌカーを祝っていたけど、今年はコロナなので出張がないです。トロントで祝っています。
 
-![Menorah](/assets/images/2020-12-21/menorah.jpg)
+![Menorah](/assets/images/2020/menorah.jpg)
