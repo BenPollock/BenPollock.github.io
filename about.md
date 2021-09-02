@@ -7,7 +7,7 @@ header:
 excerpt: "About Page"
 ---
 
-I am a Senior Technical Program Manager & Software Development Manager located in Toronto ON.
+I am a Senior Technical Program Manager & Software Development Manager located in Toronto, ON, Canada.
 
 Full work history and contact information available via: <a href="https://www.linkedin.com/in/benpollock/">LinkedIn</a>
 
