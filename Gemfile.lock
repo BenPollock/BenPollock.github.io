@@ -224,6 +224,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages (~> 217)
   jekyll-include-cache
+  jekyll-paginate
   webrick (~> 1.7)
 
 BUNDLED WITH
