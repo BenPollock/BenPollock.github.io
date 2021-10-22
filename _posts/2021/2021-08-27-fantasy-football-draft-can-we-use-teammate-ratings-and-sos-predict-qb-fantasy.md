@@ -7,7 +7,7 @@ tags: fantasy-football draft 2021
 excerpt: "Using standard QB stats from 2016-2019, teammate ratings, and strength of schedule to predict 2020 fantasy points."
 ---
 
-In the <a href="{% post_url 2021-08-24-fantasy-football-draft-can-use-historical-stats-predict-qb-fantasy %}">last post</a> I found that just looking at the last 2-3 years of historical basic stats was not sufficient to predict future fantasy results, and any data older than that was irrelevant. I then theorized that, based on my football intuition, looking at in-season stats like strength of schedule and strength of teammates are more relevant.
+In the [last post]({% post_url 2021/2021-08-24-fantasy-football-draft-can-use-historical-stats-predict-qb-fantasy %}) I found that just looking at the last 2-3 years of historical basic stats was not sufficient to predict future fantasy results, and any data older than that was irrelevant. I then theorized that, based on my football intuition, looking at in-season stats like strength of schedule and strength of teammates are more relevant.
 
 # Implementation
 
